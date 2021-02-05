@@ -1,0 +1,62 @@
+.gridcontainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    animation: fadeIn 1s;
+
+    @media screen and (max-width: 568px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.box {
+    
+    height: 400px;
+    background-color: brown;
+}
+
+.photoContent {
+    position: relative;
+    height: 40vh;
+    cursor: pointer;
+    transition: all .2s ease;
+
+    &:hover {
+        
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            transition: all .5s ease;
+            
+            opacity: .7;
+        }
+
+        .mask {
+            z-index: 9;
+            position: absolute;
+            background-color: rgba(58, 58, 58, 0.801);
+            height: 40vh;
+            width: 50vw;
+            transition: all .5s ease;
+
+            @media screen and (max-width: 568px){
+                width: 100vw;
+            }
+        }
+
+        p {
+            z-index: 10;
+            font-size: 1.9rem;
+            font-weight: 400;
+            color: #fff;
+        }
+    }
+}
